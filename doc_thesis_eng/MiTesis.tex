@@ -1,0 +1,98 @@
+%%%%%%%%%%%%%%%%%%%%%
+% Documento maestro %
+%%%%%%%%%%%%%%%%%%%%%
+\documentclass{fime_eng}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Cargando paquetes y definiendo opciones %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Aquí puedes cargar los paquetes que vas a usar. La clase
+% fime ya incluye babel, inputenc, graphicx y los de la AMS.
+% Cargar un paquete está a tu libertad (y responsabilidad).
+\usepackage{hyperref}
+    \hypersetup{breaklinks=true,colorlinks=true,linkcolor=black,citecolor=black,urlcolor=black}
+\usepackage[spanish,textsize=scriptsize]{todonotes}
+\usepackage{multicol}
+
+%%%%%%%%%%%%%%%%%%%%%
+% Definiendo campos %
+%%%%%%%%%%%%%%%%%%%%%
+\def\titulo{Título en español}
+\def\tituloEng{Title in english}
+\def\autor{Nombre Apellidos}
+\def\matricula{1234567}
+\def\grado{Doctorado en\ldots}
+\def\gradoEng{Doctor in \ldots}
+% En caso de que el grado tenga orientación o especialidad llenar el siguiente
+% campo dejando un ESPACIO INICIAL, en caso contrario, dejar vacío
+\def\orientacion{}
+% Coloca el mes con mayúscula inicial
+\def\fecha{Mes 20XX}
+\def\fechaEng{Month 20XX}
+
+\def\asesor{Grado.\ Nombre Apellidos}
+\def\asesorEng{Nombre Apellidos, Grado.}
+\def\revisorA{Grado.\ Nombre Apellidos}
+\def\revisorAEng{Nombre Apellidos, Grado.}
+\def\revisorB{Dra.\ Nombre Apellidos}
+\def\revisorBEng{Nombre Apellidos, Grado.}
+% En el caso de que tu tesis sea de doctorado activa la variable cambiándola a \doctoradotrue
+% y define tus otros dos revisores
+\newif\ifdoctorado\doctoradotrue
+\def\revisorC{Grado.\ Nombre Apellidos}
+\def\revisorCEng{Nombre Apellido, Grado.}
+\def\revisorD{Grado.\ Nombre Apellido}
+\def\revisorDEng{Nombre Apellido, Grado.}
+% El visto bueno siempre va
+\def\vobo{Grado. Nombre Apellido}
+\def\voboEng{Nombre Apellido, Grado.}
+
+%%%%%%%%%%%%%%%%%%%%%%%
+% Inicia el documento %
+%%%%%%%%%%%%%%%%%%%%%%%
+\begin{document}
+
+\frontmatter
+\pagestyle{main}
+
+\include{Chapters/0Portadas-spa}
+\include{Chapters/1Dedicatoria}
+
+\tableofcontents
+\listoffigures
+\listoftables
+
+\include{Chapters/2Agradecimientos}
+\include{Chapters/3Resumen}
+\include{Chapters/3Resumen-eng}
+
+\mainmatter
+\pagestyle{fime}
+
+\include{Chapters/c1-introduction}
+\include{Chapters/c2-related_literature}
+\include{Chapters/c3-theoretical_basis}
+\include{Chapters/c4-methodology}
+\include{Chapters/c5-results}
+\include{Chapters/c6-conclusions}
+
+\appendix
+%%% Desbloquear si tienes apéndice
+%\include{Apendice1}
+
+\backmatter
+\pagestyle{main}
+
+% Aquí va la bibliografía, puedes usar el entorno de LaTeX (thebibliography)
+% o la herramienta BibTeX. En caso de que optes por BibTeX, puedes usar
+% alguno de los archivos de estilo (mighelbib.bst o mighelnat.bst) incluidos
+% en el paquete, cuyos diseños armonizan con el diseño de tesis provisto por
+% fime.cls. Para muestra, basta un botón:
+\bibliographystyle{plainnat}
+\bibliography{MiBiblio}
+
+\label{lastpage}
+\include{Chapters/Autobiografia}
+
+\end{document}
+

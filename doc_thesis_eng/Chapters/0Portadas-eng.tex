@@ -1,0 +1,119 @@
+%%%%%%%%%%%%%%%%%%%%%%%%
+% Primer portada: UANL %
+%%%%%%%%%%%%%%%%%%%%%%%%
+\thispagestyle{empty}
+
+\begin{scshape}
+\begin{center}
+	{\Large \uanl} \\[5mm]
+	{\large \fime} \\[5mm]
+	{\large \depg}
+	\vskip15mm
+	\includegraphics[height=55mm]{uanl}
+	\vskip12mm
+	\begin{tabular}{p{11cm}}
+		\centering
+		{\large \tituloEng}
+	\end{tabular}
+	\vskip7mm
+	{by}\\[7mm]
+	{\large \autor}\\[7mm]
+        % Si en tu posgrado la tesis no es opcional (como sí lo es en licenciatura), no modifiques esta línea:
+	{as a requirement to obtain the degree of}\\[3mm]
+	\MakeUppercase{\gradoEng}\\
+	\orientacion
+	\vfill
+	\fechaEng
+\end{center}
+\end{scshape}
+ 
+%%%%%%%%%%%%%%%%%%%%%%%%%
+% Segunda portada: FIME %
+%%%%%%%%%%%%%%%%%%%%%%%%%
+\newpage
+\thispagestyle{empty}
+
+\begin{scshape}
+\begin{center}
+	{\Large\uanl} \\[5mm]
+	{\large\fime} \\[5mm]
+	{\large\depg}
+	\vskip16mm
+	\includegraphics[height=50mm]{fime}
+	\vskip16mm
+	\begin{tabular}{p{11cm}}
+		\centering
+		{\large \tituloEng}
+	\end{tabular}
+	\vskip7mm
+	{by}\\[7mm]
+	{\large \autor}\\[7mm]
+        % Si en tu posgrado la tesis no es opcional (como sí lo es en licenciatura), no modifiques esta línea:
+	{as a requirement to obtain the degree of}\\[3mm]
+	\MakeUppercase{\gradoEng}\\
+	\orientacion
+	\vfill
+	\fechaEng
+\end{center}
+\end{scshape}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Carta del comité de tesis %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newpage
+\thispagestyle{empty}
+\enlargethispage{5mm}
+
+{\renewcommand{\baselinestretch}{1.1}\selectfont
+\begin{center}\vspace*{-25mm}\hspace*{-10mm}
+\begin{minipage}{170.5mm}
+\hspace{-1.5mm}\includegraphics[height=20mm]{uanl}\hfill\raise1mm\hbox{\includegraphics[height=18.5mm]{fime}}
+\hrule\vspace{0.5mm}
+\scalebox{.5}{\MakeUppercase{\uanl}}\hfill\scalebox{.5}{\MakeUppercase{\fime}}\medskip
+\end{minipage}
+\vskip4mm{\sc\large\uanl\\\fime\\[3pt]\depg}\vskip6mm
+\end{center}
+
+The members of the Thesis Committee recommended than the Thesis \textit{\tituloEng}, realized by the student \autor, with registration number \matricula, is accepted for his presentation as requirement to obtain the degree of \grado\orientacion
+\ifdoctorado\vskip10mm\else\vskip8mm\fi
+
+\begin{center}
+The Thesis Committee\\
+\ifdoctorado\vskip15mm\else\vskip25mm\fi
+
+\ifdoctorado{%%%
+\begin{tabular}{p{37mm}p{21mm}p{12mm}p{21mm}p{37mm}}
+	\cline{1-2} \cline{4-5} \\ [-3mm]
+	\multicolumn{2}{c}{\asesorEng} & & \multicolumn{2}{c}{\revisorAEng} \\
+	\multicolumn{2}{c}{Asesor}  & & \multicolumn{2}{c}{Asesor} \\ [13mm]
+	\cline{1-2} \cline{4-5} \\ [-3mm]
+	\multicolumn{2}{c}{\revisorBEng} & & \multicolumn{2}{c}{\revisorCEng} \\
+	\multicolumn{2}{c}{Revisor}   & & \multicolumn{2}{c}{Revisor} \\ [13mm]
+	\cline{2-4} \\ [-3mm]
+	& \multicolumn{3}{c}{\revisorDEng} & \\
+	& \multicolumn{3}{c}{Revisor}   & \\ [17mm]
+	& \multicolumn{3}{c}{Vo. Bo.} & \\ [13mm]
+	\cline{2-4} \\ [-3mm]
+	& \multicolumn{3}{c}{\voboEng}   & \\
+	& \multicolumn{3}{c}{Subdirector of Postgraduate Studies}   & \\ &&&&
+\end{tabular}
+}\else{%%%
+\begin{tabular}{p{37mm}p{21mm}p{12mm}p{21mm}p{37mm}}
+	\cline{2-4}
+	& \multicolumn{3}{c}{\asesor} & \\
+	& \multicolumn{3}{c}{Asesor}  & \\[19mm]
+	\cline{1-2} \cline{4-5}
+	\multicolumn{2}{c}{\revisorA} & & \multicolumn{2}{c}{\revisorB} \\
+	\multicolumn{2}{c}{Revisor}   & & \multicolumn{2}{c}{Revisor}   \\[2mm]
+	& \multicolumn{3}{c}{Vo. Bo.} & \\[17mm]
+	\cline{2-4}
+	& \multicolumn{3}{c}{\vobo}   & \\
+	& \multicolumn{3}{c}{Subdirector de Estudios de Posgrado}   & \\ &&&&
+\end{tabular}
+}\fi%%%
+
+\vfill
+
+\snnl, \MakeLowercase{\fechaEng}
+
+\end{center}}

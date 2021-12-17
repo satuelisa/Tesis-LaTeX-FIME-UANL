@@ -1,0 +1,227 @@
+\documentclass[9pt]{beamer}
+\usetheme{AnnArbor} %Darmstadt %Warsaw %AnnArbor 
+\usecolortheme{spruce} %seahorse 
+\usepackage[spanish,mexico]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage{graphicx}
+\usepackage{times}
+\usefonttheme{structurebold}
+\setbeamercovered{transparent} %transparent %dynamic
+\usepackage{subfigure}
+\usepackage{amssymb, amsmath, amsbsy}
+
+% https://tex.stackexchange.com/a/502353
+\usepackage{enumitem}
+\newlist{todolist}{itemize}{2}
+\setlist[todolist]{label=$\square$}
+\usepackage{pifont}
+\newcommand{\cmark}{\ding{51}}%
+\newcommand{\done}{\rlap{$\square$}{\raisebox{2pt}{\large\hspace{1pt}\cmark}}%
+\hspace{-2.5pt}}
+
+\usepackage[sort&compress,numbers]{natbib}
+\selectlanguage{spanish}
+\usepackage[spanish,onelanguage]{algorithm2e}
+\usepackage{listings}
+\newcounter{saveenumi}
+\newcommand{\seti}{\setcounter{saveenumi}{\value{enumi}}}
+\newcommand{\conti}{\setcounter{enumi}{\value{saveenumi}}}
+\usepackage{tabu}
+\extrarowsep = 1mm
+\usepackage{multirow}
+\usepackage[export]{adjustbox}
+
+\usepackage{soul} % Para tachar texto
+
+\defbeamertemplate*{title page}{propio}[1][]
+{
+\vbox{}
+\vfill
+\begingroup
+\centering    
+{\usebeamercolor[fg]{titlegraphic}\inserttitlegraphic\par}
+\vspace{0.1 \paperheight}%
+\begin{beamercolorbox}[sep=8pt,center,#1]{title}
+	\usebeamerfont{title}\inserttitle\par%
+	\ifx\insertsubtitle\@empty%
+	\else%
+	\vskip0.25em%
+	{\usebeamerfont{subtitle}\usebeamercolor[fg]{subtitle}\insertsubtitle\par}%
+	\fi%     
+\end{beamercolorbox}%
+\vskip1em\par
+\begin{beamercolorbox}[sep=8pt,center,#1]{author}
+	\usebeamerfont{author}\insertauthor
+\end{beamercolorbox}
+\begin{beamercolorbox}[sep=8pt,center,#1]{institute}
+	\usebeamerfont{institute}\insertinstitute
+\end{beamercolorbox}
+\begin{beamercolorbox}[sep=8pt,center,#1]{date}
+	\usebeamerfont{date}\insertdate
+\end{beamercolorbox}\vskip0.5em
+
+\endgroup
+\vfill
+}
+
+%https://ondahostil.wordpress.com/2016/11/15/lo-que-he-aprendido-esquemas-en-latex/
+\usepackage{schemata}
+\newcommand\diagram[2]{\schema{\schemabox{#1}}{\schemabox{#2}}}
+\setbeamertemplate{navigation symbols}{}
+
+\graphicspath{ {../Figuras/} }  % Las figuras se colocan en la carpeta Figuras
+%Recuerde que para agregar la carpeta de figuras se debe ejecutar las funciones siguientes: pdflatex bibtex pdflatex pdflatex (F6+F11+F6+F6) desde línea de comandos o desde la interfaz que usted utilice. 
+
+\title[Título}
+\author{{\bf Nombres Apellidos}}
+\institute[PISIS FIME UANL]{\sc Posgrado en Ingeniería con especialidad en Ingeniería de Sistemas \\
+Facultad de Ingeniería Mecánica y Eléctrica\\
+Universidad Autónoma de Nuevo León}
+\date{\today}
+
+\titlegraphic{
+%\includegraphics[scale=1.0]{UANL.png}\hspace*{5cm}
+\includegraphics[scale=0.8]{uanl.eps}\hspace*{4cm}
+\includegraphics[scale=0.4]{fime.eps}
+}
+
+
+\AtBeginSection[]{\frame{\frametitle{}\tableofcontents[currentsection]}}
+
+\begin{document}
+\frame
+\titlepage
+
+\begin{frame}{Contenido}
+	\tableofcontents
+\end{frame}
+
+
+\section{Introducción}
+\begin{frame}{Título de la diapositiva}
+	\begin{columns}
+		\begin{column}{0.45\textwidth}
+			\begin{block}{Bloque}
+				Ejemplo de bloques en columnas
+			\end{block}
+
+			\begin{block}{Bloque}
+				\begin{itemize}
+					\item Elemento 1.
+					\item Elemento 2.
+					\item Elemento 3.
+				\end{itemize}
+			\end{block}
+			
+		\end{column}
+		\begin{column}{0.45\textwidth}
+			\begin{block}{Bloque}
+				Ejemplo de bloques en columnas
+			\end{block}
+
+			\begin{block}{Bloque}
+				Ejemplo de bloques en columnas
+			\end{block}
+		\end{column}
+	\end{columns}
+\end{frame}
+
+\begin{frame}{Hipótesis}
+	Lorem ipsum.
+\end{frame}
+
+\begin{frame}{Objetivos}
+	\begin{itemize}
+		\item Objetivo 1.
+		\item Objetivo 2.
+		\item Objetivo 3.
+	\end{itemize}
+\end{frame}
+
+\section{Antecedentes}
+\subsection{Estudios}
+\begin{frame}{Título}
+	Lorem ipsum
+\end{frame}
+
+\subsection{Motivación}
+\begin{frame}{Título}
+	Lorem ipsum
+\end{frame}
+
+
+\section{Metodología y resultados}
+\subsection{Subsección 1}
+\begin{frame}{Título}
+	Lorem ipsum
+\end{frame}
+
+\subsection{Subsección 2}
+\begin{frame}{Título}
+	Lorem ipsum
+\end{frame}
+
+\subsection{Subsección 3}
+\begin{frame}{Título}
+	Lorem ipsum
+\end{frame}
+
+\section{Resultados}
+\begin{frame}{Título}
+	Lorem ipsum
+\end{frame}
+
+\section{Conclusiones y contribuciones}
+\begin{frame}{Conclusiones}
+	\begin{itemize}
+		\item Conclusión 1.
+		\item Conclusión 2.
+		\item Conclusión 3.
+	\end{itemize}
+\end{frame}
+
+\begin{frame}{Contribuciones}
+	\begin{itemize}
+		\item Contribución 1.
+		\item Contribución 2.
+		\item Contribución 3.
+	\end{itemize}
+\end{frame}
+
+\begin{frame}{Objetivos}
+	\begin{todolist}
+		\item[\done] Objetivo cumplido.
+		\item Objetivo faltante.
+	\end{todolist}
+\end{frame}
+
+\section{Trabajo a futuro}
+\begin{frame}{Trabajo a futuro}
+	\begin{itemize}
+		\item Futuro 1.
+		\item Futuro 2.
+		\item Futuro 3.
+	\end{itemize}
+\end{frame}
+
+\section*{Agradecimientos}
+\begin{frame}
+	\center{Gracias por su atención.} \\
+	
+	\url{usuario@correo.dominio}
+	
+\end{frame}
+
+
+\section*{Bibliografía}
+\begin{frame}[allowframebreaks]
+	\bibliographystyle{apalike}
+	\bibliography{../MiBiblio.bib}
+\end{frame}
+
+\section{Anexos}
+\begin{frame}{Título}
+	Lorem ipsum
+\end{frame}
+
+\end{document}
